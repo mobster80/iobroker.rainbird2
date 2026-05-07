@@ -18,17 +18,17 @@
       }
     },
     "titleLang": {
-      "en": "Rain Bird irrigation control",
-      "de": "Rain Bird Bewässerungssteuerung",
-      "ru": "Контроль орошения Rain Bird",
-      "pt": "Controle de irrigação Rain Bird",
-      "nl": "Rain Bird irrigatiecontrole",
-      "fr": "Contrôle de l'irrigation Rain Bird",
-      "it": "Controllo dell'irrigazione Rain Bird",
-      "es": "Control de riego Rain Bird",
-      "pl": "Kontrola nawadniania Rain Bird",
-      "zh-cn": "雨鸟灌溉控制",
-      "uk": "Контроль зрошення Rain Bird"
+      "en": "Rain Bird irrigation control over IQ4 cloud",
+      "de": "Rain Bird Bewässerungssteuerung über IQ4 Cloud",
+      "ru": "Управление поливом Rain Bird через облако IQ4",
+      "pt": "Controle de irrigação Rain Bird via nuvem IQ4",
+      "nl": "Rain Bird irrigatiecontrole via IQ4 cloud",
+      "fr": "Contrôle d'irrigation Rain Bird via cloud IQ4",
+      "it": "Controllo irrigazione Rain Bird tramite cloud IQ4",
+      "es": "Control de riego Rain Bird mediante nube IQ4",
+      "pl": "Sterowanie nawadnianiem Rain Bird przez chmurę IQ4",
+      "uk": "Керування зрошенням Rain Bird через хмару IQ4",
+      "zh-cn": "通过IQ4云控制Rain Bird灌溉"
     },
     "desc": {
       "en": "Rain Bird IQ4 Cloud API adapter for MQTT controllers (ESP-TM2)",
