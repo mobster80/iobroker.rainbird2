@@ -1,13 +1,12 @@
 {
-  "name": "iobroker.rainbird22",
-  "version": "2.0.2",
-  "description": "rain bird",
-  "author": "Marius Burkard <m.burkard@pixcept.de>",
+  "name": "iobroker.rainbird2",
+  "version": "1.0.0",
+  "description": "Rain Bird IQ4 Cloud API adapter for MQTT controllers (ESP-TM2)",
+  "author": "Michael Obster <michael@obster.org>",
   "contributors": [
-    "Marius Burkard <m.burkard@pixcept.de>",
-    "mcm1957 <iobroker-community-adapters@gmx.de"
+    "Michael Obster <michael@obster.org>"
   ],
-  "homepage": "https://github.com/iobroker-community-adapters/ioBroker.rainbird2",
+  "homepage": "https://github.com/mobster80/iobroker.rainbird2",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -18,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iobroker-community-adapters/ioBroker.rainbird2.git"
+    "url": "git+https://github.com/mobster80/iobroker.rainbird2.git"
   },
   "engines": {
     "node": ">= 20"
