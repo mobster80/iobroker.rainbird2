@@ -5,23 +5,37 @@
         "header": {
             "newLine": true,
             "type": "header",
-            "text": "Rainbird",
+            "text": "Rain Bird 2 - Cloud API (IQ4)",
             "size": 2
         },
-        "ipaddress": {
+        "infoText": {
+            "type": "staticText",
+            "newLine": true,
+            "text": "This adapter uses the Rain Bird IQ4 Cloud API for MQTT controllers (ESP-TM2). You must authenticate using the iq4-cli tool first.",
+            "xs": 12,
+            "style": {
+                "backgroundColor": "#e3f2fd",
+                "padding": "10px",
+                "borderRadius": "4px",
+                "marginBottom": "15px"
+            }
+        },
+        "cliPath": {
             "type": "text",
-            "label": "ipaddress",
+            "label": "Path to iq4-cli binary",
+            "help": "Full path to the iq4-cli executable. Default: ~/.openclaw/workspace/skills/rainbird-iq4/iq4-cli",
             "newLine": true,
             "xs": 12,
             "sm": 12,
-            "md": 6,
-            "lg": 4,
-            "xl": 4
+            "md": 8,
+            "lg": 6,
+            "xl": 6,
+            "default": "~/.openclaw/workspace/skills/rainbird-iq4/iq4-cli"
         },
-        "password": {
-            "type": "password",
-            "label": "password",
-            "visible": true,
+        "controllerId": {
+            "type": "number",
+            "label": "Controller ID (optional)",
+            "help": "Leave empty to auto-detect the first controller in your account",
             "newLine": true,
             "xs": 12,
             "sm": 12,
@@ -31,25 +45,40 @@
         },
         "pollinterval": {
             "type": "number",
-            "label": "pollinterval",
-            "newLine": true,
-            "xs": 12,
-            "sm": 12,
-            "md": 6,
-            "lg": 4,
-            "xl": 4
-        },
-        "usePyrainbird": {
-            "type": "checkbox",
-            "label": "usePyrainbird",
-            "help": "usePyrainbirdHelp",
+            "label": "Poll interval (ms)",
+            "help": "How often to update controller status (minimum 5000ms)",
             "newLine": true,
             "xs": 12,
             "sm": 12,
             "md": 6,
             "lg": 4,
             "xl": 4,
-            "default": true
+            "default": 30000,
+            "min": 5000
+        },
+        "authInfo": {
+            "type": "staticText",
+            "newLine": true,
+            "text": "<strong>Authentication Setup:</strong><br/>1. Install iq4-cli: <code>cd ~/.openclaw/workspace/skills/rainbird-iq4 && go build -o iq4-cli .</code><br/>2. Login: <code>./iq4-cli login YOUR_USERNAME YOUR_PASSWORD</code><br/>3. Restart adapter",
+            "xs": 12,
+            "style": {
+                "backgroundColor": "#fff3e0",
+                "padding": "10px",
+                "borderRadius": "4px",
+                "marginTop": "15px"
+            }
+        },
+        "constraintInfo": {
+            "type": "staticText",
+            "newLine": true,
+            "text": "<strong>⚠️ Important:</strong> ESP-TM2 controllers only accept start times in 15-minute intervals (:00, :15, :30, :45). Other times will be ignored.",
+            "xs": 12,
+            "style": {
+                "backgroundColor": "#ffebee",
+                "padding": "10px",
+                "borderRadius": "4px",
+                "marginTop": "10px"
+            }
         }
     }
-  }
+}

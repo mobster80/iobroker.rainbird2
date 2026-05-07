@@ -1,7 +1,5 @@
 {
-    "ipaddress": "IP address",
-    "password": "Password",
-    "pollinterval": "Polling interval",
-    "usePyrainbird": "Use pyrainbird library",
-    "usePyrainbirdHelp": "Use the official Python pyrainbird library (recommended). Requires Python 3 with pyrainbird installed. Uncheck to use the legacy JavaScript implementation."
+    "cliPath": "Path to iq4-cli binary",
+    "controllerId": "Controller ID",
+    "pollinterval": "Polling interval"
 }

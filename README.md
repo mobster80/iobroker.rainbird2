@@ -4,139 +4,187 @@
 
 **Rain Bird IQ4 Cloud API adapter for ioBroker**
 
-This adapter provides support for Rain Bird irrigation controllers via the **IQ4 Cloud API**, specifically designed for MQTT-enabled controllers like the **ESP-TM2** that don't support the local WiFi API.
+Native support for MQTT-enabled Rain Bird controllers (ESP-TM2) via the IQ4 Cloud API.
 
 ## Features
 
-- ✅ Full support for ESP-TM2 and other MQTT controllers
-- ✅ Read controller status (online/offline)
-- ✅ Read and control programs (schedules)
-- ✅ Read stations (zones)
-- ✅ Set seasonal adjust per program
-- ✅ Modify watering days
-- ✅ Add/remove start times (15-minute intervals)
-- ✅ Set station runtimes
-- ✅ Rain delay monitoring
+- ✅ **Full ESP-TM2 support** (and other MQTT controllers)
+- ✅ Controller status (online/offline, rain delay)
+- ✅ Program management (read schedules, seasonal adjust, water days)
+- ✅ Station information
+- ✅ Runtime monitoring (base + adjusted)
+- ✅ **Write operations:** Change seasonal adjust and water days
+- ✅ Simple setup - no local API configuration needed
 
-## Why `rainbird2`?
+## Why rainbird2?
 
-The original `ioBroker.rainbird` adapter uses the local WiFi API (pyrainbird), which doesn't work with newer MQTT controllers like the ESP-TM2. This adapter uses the **Rain Bird IQ4 Cloud API** instead, providing full support for modern controllers.
+The original `ioBroker.rainbird` uses the local WiFi API which **doesn't work** with MQTT controllers like the ESP-TM2. This adapter uses the **Rain Bird IQ4 Cloud API** exclusively, providing full support for modern controllers.
 
 ## Requirements
 
 1. **Rain Bird 2.0 app** account (not the legacy app)
-2. **ESP-TM2** or other MQTT-enabled Rain Bird controller
-3. **iq4-cli** binary for authentication ([installation guide](CLOUD_API.md))
+2. **ESP-TM2** or other MQTT-enabled controller
+3. **iq4-cli** binary ([installation below](#installation))
+4. **Go 1.21+** (to build iq4-cli)
 
-## Quick Start
+## Installation
 
 ### 1. Install iq4-cli
 
 ```bash
+# Create directory
+mkdir -p ~/.openclaw/workspace/skills/rainbird-iq4
 cd ~/.openclaw/workspace/skills/rainbird-iq4
+
+# Clone or download iq4-cli source
+git clone https://github.com/nickustinov/rainbird-iq4-cli.git .
+
+# Build
 go build -o iq4-cli .
 ```
 
 ### 2. Authenticate
 
 ```bash
-./iq4-cli login YOUR_USERNAME YOUR_PASSWORD
+./iq4-cli login YOUR_RAIN_BIRD_USERNAME YOUR_RAIN_BIRD_PASSWORD
 ```
 
-This creates a token at `~/.iq4/token` (expires ~2 hours).
+This creates a token at `~/.iq4/token` (valid ~2 hours).
 
 ### 3. Install Adapter
 
+Via ioBroker Admin UI or:
+
 ```bash
+cd /opt/iobroker
 npm install iobroker.rainbird2
 ```
 
 ### 4. Configure
 
-1. Enable adapter in ioBroker
-2. Set CLI path: `~/.openclaw/workspace/skills/rainbird-iq4/iq4-cli`
-3. The adapter will use your stored token automatically
+1. Open adapter settings in ioBroker Admin
+2. Set CLI path (default: `~/.openclaw/workspace/skills/rainbird-iq4/iq4-cli`)
+3. Leave Controller ID empty for auto-detect
+4. Set poll interval (default: 30000ms)
+5. Save and start adapter
 
-## Important: Start Time Constraints
+## Important Constraints
 
-⚠️ **ESP-TM2 controllers only accept start times in 15-minute intervals!**
+⚠️ **Start times must be 15-minute intervals!**
 
+ESP-TM2 controllers **only accept**:
 - ✅ Valid: 04:00, 04:15, 04:30, 04:45, 05:00, ...
 - ❌ Invalid: 04:19, 04:27, 04:55, ...
 
-Other times will be **silently ignored** by the controller.
+Other times will be **silently ignored** by the controller!
 
 ## States
 
+### Controller
+
 ```
-rainbird2.0.controller.ID.online                              (boolean, read)
-rainbird2.0.controller.ID.rainDelay                           (number, read)
-rainbird2.0.controller.ID.programs.PROGRAM_ID.name           (string, read)
-rainbird2.0.controller.ID.programs.PROGRAM_ID.enabled        (boolean, read)
-rainbird2.0.controller.ID.programs.PROGRAM_ID.seasonalAdjust (number, read/write)
-rainbird2.0.controller.ID.programs.PROGRAM_ID.weekDays       (string, read/write)
-rainbird2.0.controller.ID.stations.STATION_ID.name           (string, read)
-rainbird2.0.controller.ID.stations.STATION_ID.terminal       (number, read)
+rainbird2.0.controller.ID.online           (boolean, read-only)
+rainbird2.0.controller.ID.name             (string, read-only)
+rainbird2.0.controller.ID.rainDelay        (number, read-only, days)
 ```
 
-## Documentation
+### Stations
 
-- [Cloud API Guide](CLOUD_API.md) - Full setup and usage
-- [Implementation Status](IMPLEMENTATION_STATUS.md) - Features and roadmap
-- [IQ4 API Reference](../skills/rainbird-iq4/docs/IQ4-API.md) - Full API docs
+```
+rainbird2.0.controller.ID.stations.STATION_ID.name      (string, read-only)
+rainbird2.0.controller.ID.stations.STATION_ID.terminal  (number, read-only)
+```
 
-## Limitations
+### Programs
 
-Currently not supported (via cloud API):
-- ❌ Manual zone control (use Rain Bird app)
-- ❌ Stop irrigation command
-- ❌ Run program command
-- ❌ Rain sensor state
+```
+rainbird2.0.controller.ID.programs.PROGRAM_ID.name            (string, read-only)
+rainbird2.0.controller.ID.programs.PROGRAM_ID.enabled         (boolean, read-only)
+rainbird2.0.controller.ID.programs.PROGRAM_ID.seasonalAdjust  (number, read/write, 0-300%)
+rainbird2.0.controller.ID.programs.PROGRAM_ID.weekDays        (string, read/write, binary)
+rainbird2.0.controller.ID.programs.PROGRAM_ID.startTimes      (string, read-only)
+```
 
-These features require the local API, which is not available on MQTT controllers.
+#### weekDays Format
+
+Binary string representing Sun-Sat: `1010100`
+- Position 0 = Sunday
+- Position 1 = Monday
+- ...
+- Position 6 = Saturday
+
+Examples:
+- `1111111` = Every day
+- `0101010` = Mon/Wed/Fri
+- `1000001` = Sun/Sat only
+
+## Examples
+
+### Set Seasonal Adjust
+
+```javascript
+setState('rainbird2.0.controller.440450.programs.2485327.seasonalAdjust', 75);
+```
+
+### Change Water Days to Mon/Thu
+
+```javascript
+setState('rainbird2.0.controller.440450.programs.2485327.weekDays', '0101000');
+```
 
 ## Troubleshooting
 
-### Token expired
+### Token Expired
 
-Re-authenticate:
+If logs show authentication errors:
+
 ```bash
 cd ~/.openclaw/workspace/skills/rainbird-iq4
 ./iq4-cli login YOUR_USERNAME YOUR_PASSWORD
 ```
 
-### Controller not found
+Then restart the adapter.
 
-- Check that your Rain Bird account has controllers assigned
-- Verify controller is online in Rain Bird app
-- Ensure you're using Rain Bird 2.0 app credentials (not legacy app)
+### Controller Not Found
 
-## Architecture
+Check:
+1. Your Rain Bird account has controllers in the Rain Bird 2.0 app
+2. Controller is online in the app
+3. You're using Rain Bird 2.0 credentials (not legacy app)
 
-```
-ioBroker Adapter (Node.js)
-    ↓
-iq4-cli (Go binary)
-    ↓
-Rain Bird IQ4 Cloud API (HTTPS)
-    ↓
-Controller (MQTT)
-```
+### Adapter Won't Start
 
-## Development
-
+Check logs:
 ```bash
-# Test cloud API
-node test_cloud_cli.js
-
-# Run adapter locally
-npm start
+iobroker logs rainbird2
 ```
+
+Common issues:
+- iq4-cli not found (check path in settings)
+- Not authenticated (run login command)
+- Token expired (re-authenticate)
+
+## Limitations
+
+Cloud API does **not** support:
+- ❌ Manual zone control (use Rain Bird app)
+- ❌ Stop irrigation command
+- ❌ Run program command  
+- ❌ Rain sensor state
+- ❌ Advance zone
+
+These features require local API which MQTT controllers don't provide.
+
+## Documentation
+
+- [Cloud API Guide](CLOUD_API.md) - Detailed usage
+- [Implementation Status](IMPLEMENTATION_STATUS.md) - Features & roadmap
+- [Integration Guide](INTEGRATION_GUIDE.md) - Development guide
 
 ## Credits
 
-- Cloud API implementation based on [rainbird-iq4-cli](https://github.com/nickustinov/rainbird-iq4-cli)
-- Original local API adapter: [ioBroker.rainbird](https://github.com/iobroker-community-adapters/ioBroker.rainbird)
+- Cloud API based on [rainbird-iq4-cli](https://github.com/nickustinov/rainbird-iq4-cli)
+- Inspired by [ioBroker.rainbird](https://github.com/iobroker-community-adapters/ioBroker.rainbird)
 
 ## License
 
