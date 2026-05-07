@@ -33,8 +33,8 @@ The original `ioBroker.rainbird` uses the local WiFi API which **doesn't work** 
 
 ```bash
 # Create directory
-mkdir -p ~/.openclaw/workspace/skills/rainbird-iq4
-cd ~/.openclaw/workspace/skills/rainbird-iq4
+mkdir -p /opt/iobroker-companion/rainbird-iq4
+cd /opt/iobroker-companion/rainbird-iq4
 
 # Clone or download iq4-cli source
 git clone https://github.com/nickustinov/rainbird-iq4-cli.git .
@@ -63,7 +63,7 @@ npm install iobroker.rainbird2
 ### 4. Configure
 
 1. Open adapter settings in ioBroker Admin
-2. Set CLI path (default: `~/.openclaw/workspace/skills/rainbird-iq4/iq4-cli`)
+2. Set CLI path (default: `/opt/iobroker-companion/rainbird-iq4/iq4-cli`)
 3. Leave Controller ID empty for auto-detect
 4. Set poll interval (default: 30000ms)
 5. Save and start adapter
@@ -139,7 +139,7 @@ setState('rainbird2.0.controller.440450.programs.2485327.weekDays', '0101000');
 If logs show authentication errors:
 
 ```bash
-cd ~/.openclaw/workspace/skills/rainbird-iq4
+cd /opt/iobroker-companion/rainbird-iq4
 ./iq4-cli login YOUR_USERNAME YOUR_PASSWORD
 ```
 

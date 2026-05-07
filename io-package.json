@@ -82,7 +82,7 @@
     "password"
   ],
   "native": {
-    "cliPath": "~/.openclaw/workspace/skills/rainbird-iq4/iq4-cli",
+    "cliPath": "/opt/iobroker-companion/rainbird-iq4/iq4-cli",
     "controllerId": null,
     "pollinterval": 30000
   },

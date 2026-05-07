@@ -23,14 +23,14 @@
         "cliPath": {
             "type": "text",
             "label": "Path to iq4-cli binary",
-            "help": "Full path to the iq4-cli executable. Default: ~/.openclaw/workspace/skills/rainbird-iq4/iq4-cli",
+            "help": "Full path to the iq4-cli executable. Default: /opt/iobroker-companion/rainbird-iq4/iq4-cli",
             "newLine": true,
             "xs": 12,
             "sm": 12,
             "md": 8,
             "lg": 6,
             "xl": 6,
-            "default": "~/.openclaw/workspace/skills/rainbird-iq4/iq4-cli"
+            "default": "/opt/iobroker-companion/rainbird-iq4/iq4-cli"
         },
         "controllerId": {
             "type": "number",
@@ -59,7 +59,7 @@
         "authInfo": {
             "type": "staticText",
             "newLine": true,
-            "text": "<strong>Authentication Setup:</strong><br/>1. Install iq4-cli: <code>cd ~/.openclaw/workspace/skills/rainbird-iq4 && go build -o iq4-cli .</code><br/>2. Login: <code>./iq4-cli login YOUR_USERNAME YOUR_PASSWORD</code><br/>3. Restart adapter",
+            "text": "<strong>Authentication Setup:</strong><br/>1. Install iq4-cli: <code>cd /opt/iobroker-companion/rainbird-iq4 && go build -o iq4-cli .</code><br/>2. Login: <code>./iq4-cli login YOUR_USERNAME YOUR_PASSWORD</code><br/>3. Restart adapter",
             "xs": 12,
             "style": {
                 "backgroundColor": "#fff3e0",

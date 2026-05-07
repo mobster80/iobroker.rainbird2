@@ -26,7 +26,7 @@ Use Local API if:
 
 1. **iq4-cli binary** (handles authentication)
    ```bash
-   cd ~/.openclaw/workspace/skills/rainbird-iq4
+   cd /opt/iobroker-companion/rainbird-iq4
    go build -o iq4-cli .
    ```
 
@@ -39,7 +39,7 @@ Use Local API if:
 ### Adapter Configuration
 
 1. Enable "Use Cloud API" in adapter settings
-2. Provide path to `iq4-cli` binary (default: `~/.openclaw/workspace/skills/rainbird-iq4/iq4-cli`)
+2. Provide path to `iq4-cli` binary (default: `/opt/iobroker-companion/rainbird-iq4/iq4-cli`)
 3. The adapter will use the stored token automatically
 4. Token refresh is handled automatically
 
