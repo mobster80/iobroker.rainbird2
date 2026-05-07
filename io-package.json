@@ -5,72 +5,16 @@
     "news": {
       "1.0.0": {
         "en": "Initial release: Cloud-only adapter for Rain Bird IQ4 API\nSupports MQTT controllers (ESP-TM2)\nFeatures: Controller status, program management, seasonal adjust, water days\nRequires iq4-cli authentication",
-        "de": "Erstveröffentlichung: Cloud-only Adapter für Rain Bird IQ4 API\nUnterstützt MQTT Controller (ESP-TM2)\nFunktionen: Controller-Status, Programmverwaltung, Saisonanpassung, Bewässerungstage\nErfordert iq4-cli Authentifizierung"
-      },
-      "2.0.2": {
-        "en": "@strathcole/iob-lib has been migrated to local repository (#27)\nDependencies have been updated",
-        "de": "@strathcole/iob-lib wurde zum lokalen repository migriert (#27)\nAbhängigkeiten wurden aktualisiert",
-        "ru": "@strathcole/iob-lib был перенесен в местное хранилище (#27)\nЗависимость обновлена",
-        "pt": "@strathcole/iob-lib foi migrado para o repositório local (#27)\nAs dependências foram atualizadas",
-        "nl": "@strathcole/iob-lib is gemigreerd naar lokale repository (#27)\nAfhankelijkheden zijn bijgewerkt",
-        "fr": "@strathcole/iob-lib a été migré vers le dépôt local (#27)\nLes dépendances ont été actualisées",
-        "it": "@strathcole/iob-lib è stato migrato nel repository locale (#27)\nLe dipendenze sono state aggiornate",
-        "es": "@strathcole/iob-lib ha sido migrado al repositorio local (#27)\nSe han actualizado las dependencias",
-        "pl": "@ strathcole / iob- lib został przeniesiony do lokalnego repozytorium (# 27)\nZaktualizowano zależności",
-        "uk": "@strathcole/iob-lib був мігрований до місцевих репозиторій (#27)\nЗалежність було оновлено",
-        "zh-cn": "@strathcole/iob-lib 已迁移到本地仓库(# 27)\n依赖关系已更新"
-      },
-      "2.0.1": {
-        "en": "Some minor corrections to installations news and some internal changes at packging have been applied.",
-        "de": "Einige kleinere Korrekturen der News im Zuge der Installation und einige interne Änderungen am Packaging wurden vorgenommen.",
-        "ru": "Были применены некоторые незначительные исправления к новостям об установках и некоторые внутренние изменения при остановке.",
-        "pt": "Foram aplicadas algumas correções menores às notícias das instalações e algumas mudanças internas no pacakging.",
-        "nl": "Er zijn enkele kleine correcties toegepast op het installatienieuws en enkele interne veranderingen tijdens de pacaking.",
-        "fr": "Quelques corrections mineures aux nouvelles des installations et quelques changements internes au pacakging ont été appliqués.",
-        "it": "Sono state applicate alcune piccole correzioni alle notizie delle installazioni e alcune modifiche interne al pacakging.",
-        "es": "Se han aplicado algunas correcciones menores a las noticias de las instalaciones y algunos cambios internos en la pacakging.",
-        "pl": "Zastosowano pewne drobne korekty w instalacjach wiadomości i pewne zmiany wewnętrzne przy pakaksowaniu.",
-        "uk": "Наведено незначні корекції для встановлення новин та деяких внутрішніх змін при пакуванні.",
-        "zh-cn": "对设施新闻进行了一些小的更正,并对内部进行了一些改动."
-      },
-      "2.0.0": {
-        "en": "BREAKING: The password is stored encrypted now. Please reenter you password at configuration page. This is required only once after migration from release < 2.0.0 to release 2.0.0 or newer.\nAdapter requires node.js 20 now\nAdapter requires js-controller 5 and admin 6  now\nswitch adapter config to jsonconfig\nDependencies have been updated",
-        "de": "BREAKING: Das Passwort wird jetzt verschlüsselt gespeichert. Bitte geben Sie Ihr Passwort auf der Konfigurationsseite ein. Dies ist nur einmal nach der Migration von Release < 2.0.0 bis Release 2.0.0 oder neuer erforderlich.\nAdapter benötigt node.js 20 jetzt\nAdapter benötigt jetzt js-controller 5 und admin 6\nAdapter config wurde auf jsonconfig umgestellt.\nAbhängigkeiten wurden aktualisiert",
-        "ru": "Пароль теперь зашифрован. Пожалуйста, введите пароль на странице настройки. Это требуется только один раз после перехода от релиза < 2.0.0 к выпуску 2.0.0 или более новым.\nАдаптер требует node.js 20\nАдаптер требует js-контроллер 5 и admin 6 сейчас\nнастройка адаптера для jsonconfig\nЗависимость обновлена",
-        "pt": "BREAKING: A senha é armazenada criptografada agora. Por favor, volte a inserir a senha na página de configuração. Isso é necessário apenas uma vez após a migração do lançamento < 2.0.0 para liberar 2.0.0 ou mais recente.\nAdaptador requer node.js 20 agora\nAdaptador requer js-controller 5 e admin 6 agora\nadaptador de interruptor config para jsonconfig\nAs dependências foram atualizadas",
-        "nl": "Het wachtwoord wordt nu versleuteld opgeslagen. Voer uw wachtwoord opnieuw in op de configuratiepagina. Dit is slechts eenmaal nodig na migratie van afgifte < 2.0.0 om 2.0.0 of nieuwer vrij te geven.\nAdapter vereist node.js 20 nu\nAdapter vereist js-controller 5 en admin 6 nu\nswitch adapter config naar jsonconfig\nAfhankelijkheden zijn bijgewerkt",
-        "fr": "Le mot de passe est maintenant crypté. Veuillez entrer de nouveau votre mot de passe à la page de configuration. Cela n'est nécessaire qu'une fois après la migration de la libération < 2.0.0 à la libération 2.0.0 ou plus récente.\nAdaptateur nécessite node.js 20 maintenant\nAdaptateur nécessite js-controller 5 et admin 6 maintenant\nswitch adaptateur config to jsonconfig\nLes dépendances ont été actualisées",
-        "it": "BREAKING: La password viene archiviata ora. Si prega di reinserire la password nella pagina di configurazione. Questo è richiesto solo una volta dopo la migrazione dal rilascio < 2.0.0 per rilasciare 2.0.0 o più recente.\nAdattatore richiede node.js 20 ora\nAdattatore richiede js-controller 5 e admin 6 ora\nswitch adapter config to jsonconfig\nLe dipendenze sono state aggiornate",
-        "es": "La contraseña se almacena encriptada ahora. Por favor vuelva a introducir su contraseña en la página de configuración. Esto se requiere sólo una vez después de la migración de la liberación < 2.0.0 para liberar 2.0.0 o más.\nAdaptador requiere node.js 20 ahora\nAdaptador requiere js-controller 5 y admin 6 ahora\nconmutador de configuración a jsonconfig\nSe han actualizado las dependencias",
-        "pl": "Hasło jest teraz zaszyfrowane. Proszę wpisać hasło na stronie konfiguracji. Jest to wymagane tylko raz po migracji z wydania < 2.0.0 do wydania 2.0.0 lub nowsze.\nAdapter wymaga node.js 20 teraz\nAdapter wymaga sterownika js- 5 i admin 6 teraz\nprzełącz adapter konfiguracyjny na jsonconfig\nZaktualizowano zależności",
-        "uk": "BREAKING: пароль зберігається зашифровано зараз. Будь ласка, перейменуйте пароль на сторінці конфігурації. Це потрібно тільки після міграції від релізу < 2.0.0 для релізу 2.0.0 або новачка.\nАдаптер вимагає node.js 20 тепер\nАдаптер вимагає js-controller 5 і admin 6 тепер\nперехід адаптера config на jsonconfig\nЗалежність було оновлено",
-        "zh-cn": "密码已经加密了 请在配置页面重新输入密码 。 仅在从释放 < 2.0.0到释放2.0.0或更新之后,才要求这样做.\n适配器现在需要节点20\n适配器需要js控制器 5和管理员 6现在\n切换适配器配置到 jsonconfig\n依赖关系已更新"
-      },
-      "1.0.1": {
-        "en": "Adapter requires node.js 18 and js-controller >= 5 now\nAdapter has been move to iobroker-community-adapters organization\nAdapter-core has been adapter, adapter supports js-controller 6 now.\nDependencies have been updated",
-        "de": "Adapter benötigt node.js 18 und js-controller >= 5 jetzt\nAdapter wurde auf iobroker-community-Adapter Organisation verschoben\nAdapter-Kern ist Adapter, Adapter unterstützt jetzt js-controller 6.\nAbhängigkeiten wurden aktualisiert",
-        "ru": "Адаптер требует node.js 18 и js-controller >= 5 сейчас\nАдаптер перешел в организацию iobroker-community-adapters\nAdapter-core был адаптером, адаптер поддерживает js-controller 6.\nЗависимость обновлена",
-        "pt": "Adapter requer node.js 18 e js-controller >= 5 agora\nAdapter foi transferido para iobroker-community-adapters organização\nAdapter-core foi adaptador, adaptador suporta js-controller 6 agora.\nAs dependências foram atualizadas",
-        "nl": "Adapter vereist node.js 18 en js-controller Nu 5\nAdapter is verplaatst naar iobroker-community-adapters organisatie\nAdapter-core is adapter geweest, adapter ondersteunt nu js-controller 6.\nAfhankelijkheden zijn bijgewerkt",
-        "fr": "Adaptateur nécessite node.js 18 et js-controller >= 5 maintenant\nAdaptateur a été transféré à iobroker-community-adaptateurs organisation\nAdaptateur-core a été adaptateur, adaptateur prend en charge js-controller 6 maintenant.\nLes dépendances ont été actualisées",
-        "it": "Adattatore richiede node.js 18 e js-controller >= 5 ora\nL'adattatore è stato spostato all'organizzazione iobroker-community-adapters\nAdattatore-core è stato adattatore, adattatore supporta js-controller 6 ora.\nLe dipendenze sono state aggiornate",
-        "es": "Adaptador requiere node.js 18 y js-controller √= 5 ahora\nAdaptador ha sido trasladado a la organización de ibroker-community-adapters\nAdaptador-core ha sido adaptador, adaptador soporta js-controller 6 ahora.\nSe han actualizado las dependencias",
-        "pl": "Adapter wymaga node.js 18 i sterownika js- > = 5 teraz\nAdapter został przeniesiony do organizacji adapterów iobroker- community\nAdapter- core został adapter, adapter obsługuje js- kontroler 6 teraz.\nZaktualizowano zależności",
-        "uk": "Адаптер вимагає node.js 18 і js-controller >= 5 тепер\nПерехід на iobroker-community-adapters\nАдаптер-core був адаптером, адаптер підтримує js-controller 6 тепер.\nЗалежність було оновлено",
-        "zh-cn": "适配器需要节点.js 18和js控制器 QQ 现在5号\n适应者被转移到了职业经纪人-社区适应者组织\n适配器核心一直是适配器,适配器现在支持js控制器6.\n依赖关系已更新"
-      },
-      "1.0.0": {
-        "en": "BREAKING: Thee password is stored encrypted now. Please reenter you password at configuration page. This is required only once after migration from release < 1.0.0 to release 1.0.0 or newer.\nAdapter requires node.js 18 and js-controller >= 5 now\nAdapter has been move to iobroker-community-adapters organization\nAdapter-core has been adapter, adapter supports js-controller 6 now.\nDependencies have been updated",
-        "de": "BREAKING: Ihr Passwort wird jetzt verschlüsselt gespeichert. Bitte geben Sie Ihr Passwort auf der Konfigurationsseite ein. Dies ist nur einmal nach der Migration von Release < 1.0.0 bis Release 1.0.0 oder neuer erforderlich.\nAdapter benötigt node.js 18 und js-controller >= 5 jetzt\nAdapter wurde auf iobroker-community-Adapter Organisation verschoben\nAdapter-Kern ist Adapter, Adapter unterstützt jetzt js-controller 6.\nAbhängigkeiten wurden aktualisiert",
-        "ru": "Зашифрованный пароль. Пожалуйста, введите пароль на странице настройки. Это требуется только один раз после перехода от релиза < 1.0.0 к выпуску 1.0.0 или более новым.\nАдаптер требует node.js 18 и js-controller >= 5 сейчас\nАдаптер перешел в организацию iobroker-community-adapters\nAdapter-core был адаптером, адаптер поддерживает js-controller 6.\nЗависимость обновлена",
-        "pt": "BREAKING: A senha é armazenada criptografada agora. Por favor, volte a inserir a senha na página de configuração. Isso é necessário apenas uma vez após a migração do lançamento < 1.0.0 para liberar 1.0.0 ou mais recente.\nAdapter requer node.js 18 e js-controller >= 5 agora\nAdapter foi transferido para iobroker-community-adapters organização\nAdapter-core foi adaptador, adaptador suporta js-controller 6 agora.\nAs dependências foram atualizadas",
-        "nl": "Je wachtwoord wordt nu versleuteld opgeslagen. Voer uw wachtwoord opnieuw in op de configuratiepagina. Dit is slechts eenmaal nodig na migratie van afgifte < 1.0.0 om 1.0.0 of nieuwer vrij te geven.\nAdapter vereist node.js 18 en js-controller Nu 5\nAdapter is verplaatst naar iobroker-community-adapters organisatie\nAdapter-core is adapter geweest, adapter ondersteunt nu js-controller 6.\nAfhankelijkheden zijn bijgewerkt",
-        "fr": "Le mot de passe est maintenant crypté. Veuillez entrer de nouveau votre mot de passe à la page de configuration. Ceci n'est nécessaire qu'une fois après la migration de la libération < 1.0.0 à la libération 1.0.0 ou plus récente.\nAdaptateur nécessite node.js 18 et js-controller >= 5 maintenant\nAdaptateur a été transféré à iobroker-community-adaptateurs organisation\nAdaptateur-core a été adaptateur, adaptateur prend en charge js-controller 6 maintenant.\nLes dépendances ont été actualisées",
-        "it": "BREAKING: La password viene archiviata ora. Si prega di reinserire la password nella pagina di configurazione. Ciò è richiesto solo una volta dopo la migrazione dal rilascio < 1.0.0 al rilascio 1.0.0 o più recente.\nAdattatore richiede node.js 18 e js-controller >= 5 ora\nL'adattatore è stato spostato all'organizzazione iobroker-community-adapters\nAdattatore-core è stato adattatore, adattatore supporta js-controller 6 ora.\nLe dipendenze sono state aggiornate",
-        "es": "BREAKING: Tu contraseña se almacena encriptada ahora. Por favor vuelva a introducir su contraseña en la página de configuración. Esto se requiere sólo una vez después de la migración de la liberación < 1.0.0 para liberar 1.0.0 o más.\nAdaptador requiere node.js 18 y js-controller √= 5 ahora\nAdaptador ha sido trasladado a la organización de ibroker-community-adapters\nAdaptador-core ha sido adaptador, adaptador soporta js-controller 6 ahora.\nSe han actualizado las dependencias",
-        "pl": "Hasło jest teraz zaszyfrowane. Proszę wpisać hasło na stronie konfiguracji. Jest to wymagane tylko raz po migracji z wydania < 1.0.0 do wydania 1.0.0 lub nowszego.\nAdapter wymaga node.js 18 i sterownika js- > = 5 teraz\nAdapter został przeniesiony do organizacji adapterów iobroker- community\nAdapter- core został adapter, adapter obsługuje js- kontroler 6 teraz.\nZaktualizowano zależności",
-        "uk": "BREAKING: пароля зберігається зашифровано зараз. Будь ласка, перейменуйте пароль на сторінці конфігурації. Це потрібно тільки після міграції від релізу < 1.0.0 для релізу 1.0.0 або новачка.\nАдаптер вимагає node.js 18 і js-controller >= 5 тепер\nПерехід на iobroker-community-adapters\nАдаптер-core був адаптером, адаптер підтримує js-controller 6 тепер.\nЗалежність було оновлено",
-        "zh-cn": "你密码现在被加密了 请在配置页面重新输入密码 。 仅在从释放 < 1.0.0到释放1.0.0或更新后需要一次.\n适配器需要节点.js 18和js控制器 QQ 现在5号\n适应者被转移到了职业经纪人-社区适应者组织\n适配器核心一直是适配器,适配器现在支持js控制器6.\n依赖关系已更新"
+        "de": "Erstveröffentlichung: Cloud-only Adapter für Rain Bird IQ4 API\nUnterstützt MQTT Controller (ESP-TM2)\nFunktionen: Controller-Status, Programmverwaltung, Saisonanpassung, Bewässerungstage\nErfordert iq4-cli Authentifizierung",
+        "ru": "Первый релиз: Cloud-only адаптер для Rain Bird IQ4 API\nПоддержка MQTT контроллеров (ESP-TM2)\nФункции: статус контроллера, управление программами, сезонная корректировка, дни полива\nТребуется аутентификация iq4-cli",
+        "pt": "Lançamento inicial: Adaptador Cloud-only para Rain Bird IQ4 API\nSuporta controladores MQTT (ESP-TM2)\nRecursos: status do controlador, gerenciamento de programas, ajuste sazonal, dias de rega\nRequer autenticação iq4-cli",
+        "nl": "Eerste release: Cloud-only adapter voor Rain Bird IQ4 API\nOndersteuning voor MQTT controllers (ESP-TM2)\nFuncties: controllerstatus, programma beheer, seizoensaanpassing, waterdagen\nVereist iq4-cli authenticatie",
+        "fr": "Version initiale: Adaptateur Cloud-only pour Rain Bird IQ4 API\nSupporte les contrôleurs MQTT (ESP-TM2)\nFonctionnalités: état du contrôleur, gestion des programmes, ajustement saisonnier, jours d'arrosage\nNécessite une authentification iq4-cli",
+        "it": "Rilascio iniziale: Adattatore Cloud-only per Rain Bird IQ4 API\nSupporta controller MQTT (ESP-TM2)\nFunzionalità: stato controller, gestione programmi, regolazione stagionale, giorni di irrigazione\nRichiede autenticazione iq4-cli",
+        "es": "Lanzamiento inicial: Adaptador Cloud-only para Rain Bird IQ4 API\nCompatible con controladores MQTT (ESP-TM2)\nCaracterísticas: estado del controlador, gestión de programas, ajuste estacional, días de riego\nRequiere autenticación iq4-cli",
+        "pl": "Pierwsze wydanie: Adapter Cloud-only dla Rain Bird IQ4 API\nObsługa kontrolerów MQTT (ESP-TM2)\nFunkcje: status kontrolera, zarządzanie programami, dostosowanie sezonowe, dni podlewania\nWymaga uwierzytelnienia iq4-cli",
+        "uk": "Початковий реліз: Cloud-only адаптер для Rain Bird IQ4 API\nПідтримка MQTT контролерів (ESP-TM2)\nФункції: статус контролера, управління програмами, сезонне коригування, дні поливу\nПотрібна аутентифікація iq4-cli",
+        "zh-cn": "首次发布：Rain Bird IQ4 API的纯云适配器\n支持MQTT控制器（ESP-TM2）\n功能：控制器状态、程序管理、季节调整、浇水日期\n需要iq4-cli身份验证"
       }
     },
     "titleLang": {
@@ -129,62 +73,7 @@
         "admin": ">=7.7.22"
       }
     ],
-    "messages": [
-      {
-        "condition": {
-          "operand": "and",
-          "rules": [
-            "oldVersion<2.0.0",
-            "newVersion>=2.0.0"
-          ]
-        },
-        "title": {
-          "en": "Important notice!",
-          "de": "Wichtiger Hinweis!",
-          "ru": "Важное замечание!",
-          "pt": "Notícia importante!",
-          "nl": "Belangrijke mededeling!",
-          "fr": "Avis important!",
-          "it": "Avviso IMPORTANTE!",
-          "es": "Noticia importante!",
-          "pl": "Ważna uwaga!",
-          "zh-cn": "重要通知!",
-          "uk": "Важливе повідомлення!"
-        },
-        "text": {
-          "en": "The password is stored encrypted starting with release 2.0.0. Please open configuration page and reenter your password again. This action is required only once.",
-          "de": "Das Passwort wird ab Release 2.0.0 verschlüsselt gespeichert. Bitte öffnen Sie die Konfigurationsseite und geben Sie Ihr Passwort erneut ein. Diese Aktion ist nur einmal erforderlich.",
-          "ru": "Пароль хранится зашифрованным, начиная с релиза 2.0.0. Пожалуйста, откройте страницу настройки и снова введите свой пароль. Это действие требуется только один раз.",
-          "pt": "A senha é armazenada criptografada começando com a versão 2.0.0. Por favor, abra a página de configuração e reinsira sua senha novamente. Esta ação é necessária apenas uma vez.",
-          "nl": "Het wachtwoord wordt versleuteld opgeslagen, te beginnen met release 2.0.0. Open de configuratiepagina en voer uw wachtwoord opnieuw in. Deze actie is slechts één keer nodig.",
-          "fr": "Le mot de passe est stocké crypté à partir de la version 2.0.0. Veuillez ouvrir la page de configuration et réentrer votre mot de passe. Cette mesure n'est requise qu'une seule fois.",
-          "it": "La password viene memorizzata a partire dal rilascio 2.0.0. Si prega di aprire la pagina di configurazione e reinserire nuovamente la password. Questa azione è richiesta solo una volta.",
-          "es": "La contraseña se almacena encriptada comenzando con el lanzamiento 2.0.0. Por favor, abra la página de configuración y vuelva a introducir su contraseña. Esta acción sólo se requiere una vez.",
-          "pl": "Hasło jest zapisywane zaszyfrowane począwszy od wydania 2.0.0. Proszę otworzyć stronę konfiguracji i ponownie wprowadzić hasło. Działanie to jest wymagane tylko raz.",
-          "uk": "Зашифрований пароль з релізом 2.0.0. Введіть номер мобільного, який Ви вказали при укладаннi договору з нами Ця дія потрібна тільки один раз.",
-          "zh-cn": "密码是从2.0.0发布开始的加密存储. 请打开配置页面并再次输入密码 。 只需采取这一行动一次."
-        },
-        "link": "https://github.com/iobroker-community-adapters/ioBroker.rainbird#changelog",
-        "level": "warn",
-        "linkText": {
-          "en": "Changelog",
-          "de": "Änderungsprotokoll",
-          "ru": "Список изменений",
-          "pt": "Registro de alterações",
-          "nl": "Wijzigingslog",
-          "fr": "Journal des modifications",
-          "it": "Registro delle modifiche",
-          "es": "registro de cambios",
-          "pl": "Dziennik zmian",
-          "zh-cn": "变更日志",
-          "uk": "Журнал змін"
-        },
-        "buttons": [
-          "agree",
-          "cancel"
-        ]
-      }
-    ]
+    "messages": []
   },
   "protectedNative": [
     "password"
@@ -193,9 +82,9 @@
     "password"
   ],
   "native": {
-    "ipaddress": "",
-    "password": "",
-    "pollinterval": 20000
+    "cliPath": "~/.openclaw/workspace/skills/rainbird-iq4/iq4-cli",
+    "controllerId": null,
+    "pollinterval": 30000
   },
   "objects": [],
   "instanceObjects": [
