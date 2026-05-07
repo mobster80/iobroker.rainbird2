@@ -1,0 +1,12 @@
+node_modules/
+.vscode/
+.idea/
+*.log
+*.tgz
+package-lock.json
+.DS_Store
+Thumbs.db
+venv/
+__pycache__/
+*.pyc
+.iq4/
